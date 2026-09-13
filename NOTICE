@@ -1,0 +1,21 @@
+Dongtube-meowbail
+Copyright (c) 2026 Dongtube / hanzywaifu-coder
+
+This product includes software developed as part of the whatsmeow project
+(https://github.com/tulir/whatsmeow), licensed under the Mozilla Public
+License, Version 2.0 (MPL-2.0). A vendored and patched copy of whatsmeow is
+included in `third_party/whatsmeow`. The MPL-2.0 notice and license text are
+preserved inside that directory and remain legally binding for those files.
+
+This product additionally depends at build time on:
+
+- go.mau.fi/libsignal (MPL-2.0)   — Signal protocol implementation
+- google.golang.org/protobuf      — Protocol Buffers runtime (BSD-3-Clause)
+- github.com/skip2/go-qrcode      — QR code encoding (BSD-2-Clause)
+- modernc.org/sqlite              — Pure-Go SQLite driver (MIT / Public domain)
+- golang.org/x/crypto and other golang.org/x modules (BSD-3-Clause)
+- github.com/rs/zerolog (MIT)     — Structured logging (via whatsmeow)
+
+Full license texts for these dependencies are available in their respective
+source repositories and are included in the module cache under GOPATH/pkg/mod
+when building this project.

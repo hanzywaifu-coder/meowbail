@@ -1,0 +1,27 @@
+{
+  "name": "dongtube-meowbail",
+  "version": "1.0.0",
+  "description": "The Ultimate WhatsApp Library unifying whatsmeow speed and Baileys interactive power",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "baileys",
+    "whatsmeow",
+    "meowbail",
+    "dongtube",
+    "bot",
+    "buttons",
+    "interactive",
+    "group-status"
+  ],
+  "author": "Dongtube",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.18.0",
+    "@hapi/boom": "^10.0.1"
+  }
+}
