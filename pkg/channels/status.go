@@ -61,15 +61,23 @@ func SendGroupStatus(c *protocol.Client, ctx context.Context, groupJID protocol.
 		if err != nil {
 			return fmt.Errorf("upload audio for group status failed: %w", err)
 		}
+		// Waveform 64-sample untuk PTT (sama seperti SendPTTVoiceNote)
+		waveform := make([]byte, 64)
+		for i := range waveform {
+			waveform[i] = byte(20 + (i*7)%60)
+		}
+		ptt := true
 		innerMsg = &waE2E.Message{
 			AudioMessage: &waE2E.AudioMessage{
 				URL:           &resp.URL,
-				Mimetype:      proto.String("audio/mp4"),
+				Mimetype:      proto.String("audio/ogg; codecs=opus"),
 				FileEncSHA256: resp.FileEncSHA256,
 				FileSHA256:    resp.FileSHA256,
 				FileLength:    &resp.FileLength,
 				DirectPath:    &resp.DirectPath,
 				MediaKey:      resp.MediaKey,
+				PTT:           &ptt,
+				Waveform:      waveform,
 			},
 		}
 	} else if media.Text != "" {
